@@ -141,6 +141,7 @@ const Sidebar = ({isShowen,setIsShowen} : props) => {
                     </li>
                 </ul>
             </aside>
+            <div className={`sidebar-over-layer ${isShowen && 'active'}`}> </div>
         </>
     )
 }

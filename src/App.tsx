@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
 import './styles/global.scss';
-import Header from './components/Header';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Video from './components/Video';
+import Home from './components/Home';
 
 function App() {
-  const [isShowen,setIsShowen] = useState(true);
   return (
     <main className="App">
-      <Header setIsShowen={setIsShowen}/>
-      <Sidebar isShowen={isShowen} setIsShowen={setIsShowen} />
-      
+      <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/video/:id' element={<Video />}/>
+            </Routes>
+          </Router>
     </main>
   );
 }
